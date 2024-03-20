@@ -2,23 +2,11 @@ pub fn square(s: u32) -> u64 {
     if s < 1 || s > 64 {
         panic!("Square must be between 1 and 64")
     }
-
-    let mut grain:u64 = 1;
-    for _ in 2..=s {
-        grain *= 2;
-    }
-    grain
+    //  no need to assign variable just use directly required type
+    // and use :: to access the associated function
+    u64::pow(2, s-1) // Solved by geometric progression.
 }
 
 pub fn total() -> u64 {
-    let mut counter = 0;
-    let mut sum = 1;
-    loop{
-        sum  *= 2;
-        counter += 1;
-
-        if counter == 64 {
-            break sum
-        }
-    }
+    (1..=64).map(square).sum()
 }
