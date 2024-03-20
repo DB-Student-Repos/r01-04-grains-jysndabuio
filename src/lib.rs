@@ -8,5 +8,6 @@ pub fn square(s: u32) -> u64 {
 }
 
 pub fn total() -> u64 {
-    (1..=64).map(square).sum()
+    // u64::pow(2, 64) -1 overflow
+    ((1u128 << 64) -1) as u64
 }
