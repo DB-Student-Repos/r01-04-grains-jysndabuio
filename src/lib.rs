@@ -9,5 +9,7 @@ pub fn square(s: u32) -> u64 {
 
 pub fn total() -> u64 {
     // u64::pow(2, 64) -1 overflow
-    ((1u128 << 64) -1) as u64
+    // ((1u128 << 64) -1) as u64
+    const TOTAL:u64 = 18446744073709551615;
+    TOTAL
 }
